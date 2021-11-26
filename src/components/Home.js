@@ -5,13 +5,12 @@ import Section from "./Section";
 function Home() {
   return (
     <Container>
-      Home
       <Section
         title="Top"
         description="lorem ipsum top"
         leftBtnText="left btn"
         rightBtnText="right btn"
-        backgroundImage="bg1.png"
+        // backgroundImage="bg1.png"
       ></Section>
       <Section
         title="Middle"
