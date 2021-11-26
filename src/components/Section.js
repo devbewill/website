@@ -1,40 +1,19 @@
 import React from "react";
 import styled from "styled-components";
+import Post from "./Post";
 
-function Section({
-  title,
-  description,
-  leftBtnText,
-
-  rightBtnText,
-  backgroundImage,
-}) {
+function Section(props) {
   return (
-    <Wrap bgImage={backgroundImage}>
-      <TextBlock>
-        <h1>CryptoPunks</h1>
-        <p>
-          50k collectible faces with <a href="#">proof </a> of ownership stored
-          on the Ethereum blockchain. The project that inspired the modern
-          CryptoArt movement. Selected press and appearances include Mashable,
-          CNBC, The Financial Times, <a href="#">Bloomberg </a>, MarketWatch,
-          The Paris Review, Salon, The Outline, BreakerMag, Christie's of
-          London, Art|Basel, The PBS NewsHour, The New York Times in 2018 and
-          again in 2021. The Cryptopunks are one of the earliest examples of a
-          "Non-Fungible Token" on Ethereum, and were{" "}
-          <a href="#">inspiration </a> for the ERC-721 standard that powers most
-          digital art and collectibles.
-        </p>
-      </TextBlock>
-
+    <Wrap bgImage={props.backgroundImage}>
+       {props.children}
       <ItemText>
-        <h1>{title}</h1>
-        <p>{description}</p>
+        <h1>{props.title}</h1>
+        <p>{props.description}</p>
       </ItemText>
       <Buttons>
         <ButtonGroup>
-          <LeftButton>{leftBtnText}</LeftButton>
-          {rightBtnText && <RightButton>{rightBtnText}</RightButton>}
+          <LeftButton>{props.leftBtnText}</LeftButton>
+          {props.rightBtnText && <RightButton>{props.rightBtnText}</RightButton>}
         </ButtonGroup>
       </Buttons>
     </Wrap>
@@ -43,10 +22,6 @@ function Section({
 
 export default Section;
 
-const TextBlock = styled.div`
-  max-width: 60vw;
-  text-align: left;
-`;
 
 const Wrap = styled.div`
   height: 100vh;

@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Section from "./Section";
+import Post from "./Post";
 
 function Home() {
   return (
@@ -10,8 +11,9 @@ function Home() {
         description="lorem ipsum top"
         leftBtnText="left btn"
         rightBtnText="right btn"
-        // backgroundImage="bg1.png"
-      ></Section>
+      >
+        <Post></Post>
+      </Section>
       <Section
         title="Middle"
         description="lorem ipsum middle"
